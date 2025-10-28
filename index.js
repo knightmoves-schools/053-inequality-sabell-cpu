@@ -1,16 +1,14 @@
 function guessNumber(guess) {
-     // Loose equality: '25' == 25 is true, so strings with "25" will be treated as equal.
-    if (guess == 25) {
-        return 'yay';
-    } else {
-        return 'nuh uh';
+    if (guess != 25) {
+        return "not it";
     }
 }
+
 function strictGuessNumber(guess) {
-  // Strict equality: only the number 25 (type number) will be equal.
-  if (guess === 25) {
-    return 'yuh you got it';
-  } else {
-    return 'nope not it';
-  }
+    // Return "not it" if guess is not strictly equal to 25
+    if (guess !== 25) {
+        return "not it";
+    }
 }
+
+module.exports = { guessNumber, strictGuessNumber };
